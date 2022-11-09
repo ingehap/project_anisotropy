@@ -1,9 +1,9 @@
 # project_anisotropy
 
 ## Metadata
-project_name = project_anisotropy<br>
-purpose = automatization of anisotropy calculation<br>
-status = done
+- project_name = project_anisotropy<br>
+- purpose = automatization of anisotropy calculation<br>
+- status = done<br>
 
 ## Summary
 - A complete script, lfp_anisotropy.py, for analysing DTST data according to Equinor <br>
