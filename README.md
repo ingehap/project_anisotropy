@@ -1,2 +1,5 @@
 # project_anisotropy
-Automatization of anisotropy calculation
+
+## Metadata
+project_name = project_anisotropy<br>
+purpose = automatization of anisotropy calculation<br>
