@@ -3,7 +3,7 @@
 ## Metadata
 - project_name = project_anisotropy<br>
 - purpose = automatization of anisotropy calculation<br>
-- status = done<br>
+- status = done, at least for now :-)<br>
 
 ## Files below the folder src
 - anisotropy.pysh, a Loglan interface script.<br>
