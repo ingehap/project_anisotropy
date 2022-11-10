@@ -1,4 +1,4 @@
-# project_anisotropy
+# Project Information
 
 ## Metadata
 - project_name = project_anisotropy<br>
@@ -6,9 +6,9 @@
 - status = done<br>
 
 ## Summary
-- A complete script, lfp_anisotropy.py, for analysing DTST data according to Equinor <br>
-anisotropy model.<br>
-- A supporting script, misc.py, with useful functions.<br>
-- A layout for comparing results.<br>
-- A Loglan interface script.<br>
+- anisotropy.pysh, a Loglan interface script.<br>
+- anisotropy.info, information about the previous script.<br>
+- anisotropy.layout, a layout for comparing results.<br>
+- lfp_anisotropy.py, script for analysing DTST data according to Equinor anisotropy model.<br>
+- misc.py, script with useful functions.<br>
 
