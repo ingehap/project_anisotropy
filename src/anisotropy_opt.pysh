@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+
+import geolog
+import numpy as np
+import sys
+
+sys.path.insert(1, '/private/inp/projects/petrophysics/code/python')
+from lfp_anisotropy import generate_synt_gamma, write_up, equinor_gamma
+
+while geolog.gettable():
+    # Reading input logs
+    vs, vst =  0.3048e6 / lfp_dts_log, 0.3048e6 / lfp_dtst_log
+    dt_min, dt_max, dt_steps = dtmud_min, dtmud_max, dtmud_steps
+    rho_min, rho_max, rho_steps = rhomud_min, rhomud_max, rhomud_steps
+    rhob, phit = lfp_rhob, lfp_phit
+    vcl_cut, vcl = vcl_dry_cut, lfp_vcldry
+    # Write a summary on calculations
+    a2_lbfgsb, b2_lbfgsb, a2_p, b2_p, a2_tnc, b2_tnc, a3_lbfgsb, b3_lbfgsb, c3_lbfgsb, a3_p, b3_p, c3_p, a3_tnc, b3_tnc, c3_tnc = \
+    write_up(rhob, vcl, vcl_cut, vs, vst, dt_min, dt_max, dt_steps, rho_min, rho_max, rho_steps, phit, a_min, a_max, b_min, b_max, c_min, c_max)
+    # Writing output logs
+    gamma_0_5_synt, gamma_0_6_synt, gamma_0_7_synt, gamma_0_8_synt, gamma_0_9_synt, \
+    gamma_1_0_synt, gamma_1_1_synt, gamma_1_2_synt, gamma_1_3_synt, gamma_1_4_synt, \
+    gamma_1_5_synt, gamma_1_6_synt, gamma_1_7_synt, gamma_1_8_synt, gamma_1_9_synt, \
+    gamma_2_0_synt, gamma_2_1_synt, gamma_2_2_synt, gamma_2_3_synt, gamma_2_4_synt, \
+    gamma_2_5_synt = generate_synt_gamma(vcl, phit)
+    gamma2_lbfgsb = equinor_gamma(vcl, phit, a2_lbfgsb, b2_lbfgsb, 4.5)
+    gamma2_p = equinor_gamma(vcl, phit, a2_p, b2_p, 4.5)
+    gamma2_tnc= equinor_gamma(vcl, phit, a2_tnc, b2_tnc, 4.5)
+    gamma3_lbfgsb = equinor_gamma(vcl, phit, a3_lbfgsb, b3_lbfgsb, c3_lbfgsb)
+    gamma3_p = equinor_gamma(vcl, phit, a3_p, b3_p, c3_p)
+    gamma3_tnc= equinor_gamma(vcl, phit, a3_tnc, b3_tnc, c3_tnc)
+    geolog.puttable()
+
+
