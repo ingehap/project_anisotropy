@@ -5,7 +5,7 @@
 - purpose = automatization of anisotropy calculation<br>
 - status = done<br>
 
-## Summary
+## Files below the folder src
 - anisotropy.pysh, a Loglan interface script.<br>
 - anisotropy.info, information about the previous script.<br>
 - anisotropy.layout, a layout for comparing results.<br>
